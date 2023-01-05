@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: reverse order is the worst-case for this.
+
+sort2 uses: Merge Sort
+
+How do you know?: Gets the same time but not more than sort3.
+
+sort3 uses: Selection Sort
+
+How do you know?: Sorted and Reversed list gets the same time.

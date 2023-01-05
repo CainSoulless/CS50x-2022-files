@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            function checkAnswer(question) {
+                if (document.getElementById('answer3').checked && question == 1 ||
+                    document.getElementById('answer4').checked && question == 2 ||
+                    document.getElementById('answer9').checked && question == 3)
+                {
+                    document.getElementById('btn-q' + question).style.background = 'green';
+                    document.getElementById('btn-q' + question).value = 'Correct!';
+                }
+                else {
+                    document.getElementById('btn-q'+question).style.background = 'red';
+                    document.getElementById('btn-q' + question).value = 'Incorrect';
+                }
+            }
+
+            function checkAnswer2() {
+                var answer = document.getElementById('textbox').value.toLowerCase();
+                if (answer == "tomorrow") {
+                    console.log(answer);
+                    document.getElementById('btn-q4').style.background = 'green';
+                    document.getElementById('btn-q4').value = 'Correct!';
+                }
+                else {
+                    document.getElementById('btn-q4').value = 'Incorrect';
+                    document.getElementById('btn-q4').style.background = 'red';
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <div class="questions">
+                    <div class="questions__1">
+                        <h3>Question 1</h3>
+                        <p class="question__p">Phising means...</p>
+                        <form class="questions__form">
+                            <div id="questions__form-1">
+                                <div class="questions__ans">
+                                    <input type="radio" id="answer1" name="phishing">
+                                    <label for="answer1">Trying many password as you can until guess which is the correct.</label>
+                                </div>
+                                <div class="questions__ans">
+                                    <input type="radio" id="answer2" name="phishing">
+                                    <label for="answer1">Inject malicious query code in a data base.</label>
+                                </div>
+                                <div class="questions__ans">
+                                    <input type="radio" id="answer3" name="phishing">
+                                    <label for="answer3">Social engineering technique where the victim clicks to a malicious email.</label>
+                                </div>
+                                <input class="questions__button" type="button" id="btn-q1" value="Answer" onclick="checkAnswer(1)">
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questions__1">
+                        <h3>Question 2</h3>
+                        <p class="question__p">Your password is secure when ...</p>
+                        <form class="questions__form">
+                            <div class="questions__form-2">
+                                <div class="questions__ans">
+                                    <input type="radio" id="answer4" name="phishing">
+                                    <label for="answer4">In a robust password manager software.</label>
+                                </div>
+                                <div class="questions__ans">
+                                    <input type="radio" id="answer5" name="phishing">
+                                    <label for="answer5">You share it with your best friend.</label>
+                                </div>
+                                <div class="questions__ans">
+                                    <input type="radio" id="answer6" name="phishing">
+                                    <label for="answer6">You write it in a post-it because you dont want to forget it.</label>
+                                </div>
+                                <input class="questions__button" type="button" id="btn-q2" value="Answer" onclick="checkAnswer(2)">
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="questions__1">
+                        <h3>Question 3</h3>
+                        <p class="question__p">Phising means...</p>
+                        <form class="questions__form">
+                            <div class="questions__form-3">
+                                <div class="questions__ans">
+                                    <input type="radio" id="answer7" name="phishing">
+                                    <label for="answer7">Trying many password as you can until guess which is the correct.</label>
+                                </div>
+                                <div class="questions__ans">
+                                    <input type="radio" id="answer8" name="phishing">
+                                    <label for="answer8">Inject malicious query code in a data base.</label>
+                                </div>
+                                <div class="questions__ans">
+                                    <input type="radio" id="answer9" name="phishing">
+                                    <label for="answer9">Social engineering technique where the victim clicks to a malicious email.</label>
+                                </div>
+                                <input class="questions__button" type="button" id="btn-q3" value="Answer" onclick="checkAnswer(3)">
+
+                            </div>
+                        </form>
+                    </div>
+            </div>
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <div class="questions__2">
+                    <h3>Question 1</h3>
+                    <div class="questions__form2">
+                        <div class="questions__ans">
+                            <label class="questions__form2-label" for="fcountry">What is always coming but never arrives?</label>
+                            <input id="textbox" type="text" name="fcountry">
+                        </div>
+                        <input class="questions__button" type="button" id="btn-q4" value="Answer" onclick="checkAnswer2()">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

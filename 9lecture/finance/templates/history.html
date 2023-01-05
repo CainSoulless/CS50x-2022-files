@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock%}
+
+{% block main %}
+<div class="container py-5 text-center">
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-start">Symbol</th>
+                <th class="text-end">Shares</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">Transacted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for date in database %}
+                <tr>
+                    <td class="text-start">{{ date['symbol'] }}</td>
+                    <td class="text-end">{{ date['shares'] }}</td>
+                    <td class="text-end">{{ '$%0.2f' % date['price']|float }}</td>
+                    <td class="text-end">{{ date['date_transaction']  }}</td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+
+{% endblock%}
